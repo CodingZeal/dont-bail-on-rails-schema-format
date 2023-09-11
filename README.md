@@ -1,24 +1,23 @@
-# README
+# Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+`.env` contains the database connection string, load via [direnv](https://direnv.net/)
 
-Things you may want to cover:
+- `brew install direnv`
 
-* Ruby version
+```
+cd dont-bail-on-rails-schema-format
+bundle
+docker compose up -d
+bin/rails db:create db:migrate
+bin/rails server
+```
 
-* System dependencies
+# Notes
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails new dont-bail-on-rails-schema-format --database=postgresql --skip-test
+cd dont-bail-on-rails-schema-format
+docker compose up -d
+rails generate model User name:string email:string super_secret:string special_field:string
+bin/rails db:create db:migrate
+```
