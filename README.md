@@ -8,7 +8,7 @@
 cd dont-bail-on-rails-schema-format
 bundle
 docker compose up -d
-bin/rails db:create db:migrate
+bin/rails db:create db:migrate db:seed
 bin/rails server
 ```
 
@@ -18,6 +18,7 @@ bin/rails server
 rails new dont-bail-on-rails-schema-format --database=postgresql --skip-test
 cd dont-bail-on-rails-schema-format
 docker compose up -d
-rails generate model User name:string email:string super_secret:string special_field:string
-bin/rails db:create db:migrate
+bin/rails generate model User name:string email:string super_secret:string special_field:string
+bin/rails g migration AddUserReportingView
+bin/rails db:create db:migrate db:seed
 ```
