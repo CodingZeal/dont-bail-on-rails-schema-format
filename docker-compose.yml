@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15.4
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=development
+      - POSTGRES_DB=db_development
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - 5433:5432
+    volumes:
+      - rails_dev:/var/lib/postgresql/data/pgdata
+
+volumes:
+  rails_dev:
