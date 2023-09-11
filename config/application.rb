@@ -33,5 +33,8 @@ module DontBailOnRailsSchemaFormat
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Use SQL schema format
+    config.active_record.schema_format = :sql
   end
 end
