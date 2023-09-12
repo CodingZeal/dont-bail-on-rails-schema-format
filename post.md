@@ -99,9 +99,19 @@ In older versions of Rails you would need to use specific load tasks depending o
 
 However, for versions `6.1.x` and higher, you should always use `bin/rails db:schema:load` for both formats.
 
-# Resources
+## Conclusion
 
+In the world of Ruby on Rails, managing your database schema is a critical aspect of application development. Understanding the key differences between the `:ruby` and `:sql` schema formats can greatly impact how you handle your database structure.
+
+The `:ruby` schema format, being database-agnostic and the default choice, works perfectly for most applications. It provides an elegant, Ruby-based representation of your schema and supports a wide range of use cases.
+
+On the other hand, the `:sql` schema format is your go-to option when your database requirements become more complex. If your application incorporates database views, triggers, or any other database-specific objects, `:sql` offers the flexibility you need. It ensures that every database object, including those not covered by the `:ruby` schema, is properly created.
+
+Remember, your choice between these schema formats should align with your project's specific needs and goals. Consider your database's complexity, external integrations, and long-term maintenance when making this decision.
+
+## Resources
+
+- TODO: github repo link
 - https://guides.rubyonrails.org/configuring.html#config-active-record-schema-format
 - https://guides.rubyonrails.org/active_record_migrations.html
 - https://blog.saeloun.com/2020/09/30/rails-deprecates-db-structure-commands/
-- TODO: github repo
