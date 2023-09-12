@@ -111,7 +111,7 @@ Remember, your choice between these schema formats should align with your projec
 
 ## Resources
 
-- TODO: github repo link
+- Sample code can be found at: https://github.com/CodingZeal/dont-bail-on-rails-schema-format
 - https://guides.rubyonrails.org/configuring.html#config-active-record-schema-format
 - https://guides.rubyonrails.org/active_record_migrations.html
 - https://blog.saeloun.com/2020/09/30/rails-deprecates-db-structure-commands/
