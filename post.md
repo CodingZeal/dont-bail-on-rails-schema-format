@@ -41,7 +41,7 @@ CREATE VIEW public.user_reporting_view AS
     users.created_at,
     users.updated_at
   FROM public.users
-  WHERE ((users.email)::text <> 'admin@example.com'::text);
+  WHERE users.email <> 'admin@example.com';
 ```
 
 If you were using the `:ruby` format and rebuilt the database the view would not exist
@@ -64,7 +64,7 @@ psql $DATABASE_URL -c "select * from user_reporting_view limit 1;"
 
  id | name |      email      |         created_at         |         updated_at
 ----+------+-----------------+---------------+----------------------------+-----------
-  1 | FOO  | foo@example.com | 2023-09-11 21:19:23.104644 | 2023-09-11 21:19:23.104644
+  1 | FOO  | foo@example.com | 2023-09-12 21:19:23.104644 | 2023-09-12 21:19:23.104644
 (1 row)
 ```
 
@@ -94,8 +94,8 @@ This issue might occur in development if your PostgreSQL server is running in a 
 
 In older versions of Rails you would need to use specific load tasks depending on the format:
 
-- For the `:ruby` format, you'd use `bin/rails db:schema:load`.
-- For the `:sql` format, you'd use `bin/rails db:structure:load`.
+- For the `:ruby` format, you'd use `bin/rails db:schema:load`
+- For the `:sql` format, you'd use `bin/rails db:structure:load`
 
 However, for versions `6.1.x` and higher, you should always use `bin/rails db:schema:load` for both formats.
 
